@@ -1,4 +1,3 @@
-from json import *
 from funciones import *
 from pwinput import pwinput
 
@@ -14,8 +13,8 @@ while acceso == False:
     print("Ingrese la opción a ejecutar")
     opcion = validar_numero()
     
+    # Iniciar sesión
     if opcion == 1:
-        # Iniciar sesión
         limpiar_pantalla()
 
         # Se quitan los espacios al inicio y final del username.
@@ -24,9 +23,10 @@ while acceso == False:
         password = pwinput("Ingrese la contraseña:\n", )
         # Se llama la función que verifica y permite el acceso al programa.
         acceso=verificar_usuario(user, password)
-        
+    
+    # Registrarse
     elif opcion == 2:
-        # Registrarse
+        
         limpiar_pantalla()
         # Se quitan los espacios al inicio y final del username.
         user = input("Ingrese el nombre de usuario:\n").strip()
@@ -35,12 +35,13 @@ while acceso == False:
         # Se llama la función para crear el nuevo usuario
         registrar_usuario(user,password)
         print("Usuario Registrado correctamente.")
-        
+    
+    # Salir
     elif opcion == 3:
-        # Salir
+        
         print("Saliendo del programa...")
         break
-    
+
     else:
         print("Opción invalida.")        
     input("Presiona enter para continuar.")
@@ -95,5 +96,3 @@ while acceso == True:
 
     input("Presiona enter para continuar.")
     limpiar_pantalla()
-
-

@@ -29,34 +29,6 @@ def validar_numero():
         except:
             print("Por favor, ingrese un valor numerico.")
        
-            
-# =======================================================================
-# MANEJO DE JSONS
-# =======================================================================
-
-
-def cargar_proyectos():
-    try:
-        # Se abre el archivo .json y devuelve los datos de este como diccionario
-        with open('./datos/proyectos.json') as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        # Si no se encuentra el archivo o hay problemas abriendolo, devuelve un diccionario vacío
-        return {}
-
-
-def guardar_proyecto(proyectos: dict):
-    try:
-        # Se abre el .json, se guardan los datos y devuelve verdadero para indicar que fue exitoso.
-        with open('./datos/proyectos.json', "w") as f:
-            json.dump(proyectos, f, indent=4)
-            return True
-    except Exception as e:
-        # Se imprime el error en caso de no poder guardar el archivo.
-        print(F"Error tipo: {e.__class__}\nMensaje del error: {e}")
-        return False
-
-
 # =======================================================================
 # MANEJO DE USUARIOS
 # =======================================================================
@@ -124,6 +96,35 @@ def verificar_usuario(usuario, password):
 
 # =======================================================================
 # FIN DE MANEJO DE USUARIOS
+# =======================================================================
+# MANEJO DE JSONS
+# =======================================================================
+
+
+def cargar_proyectos():
+    try:
+        # Se abre el archivo .json y devuelve los datos de este como diccionario
+        with open('./datos/proyectos.json') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        # Si no se encuentra el archivo o hay problemas abriendolo, devuelve un diccionario vacío
+        return {}
+
+
+def guardar_proyecto(proyectos: dict):
+    try:
+        # Se abre el .json, se guardan los datos y devuelve verdadero para indicar que fue exitoso.
+        with open('./datos/proyectos.json', "w") as f:
+            json.dump(proyectos, f, indent=4)
+            return True
+    except Exception as e:
+        # Se imprime el error en caso de no poder guardar el archivo.
+        print(F"Error tipo: {e.__class__}\nMensaje del error: {e}")
+        return False
+
+
+# =======================================================================
+# FIN DE MANEJO DE JSONS
 # =======================================================================
 # ADMINISTRADOR DE PROYECTOS
 # =======================================================================
@@ -239,11 +240,8 @@ def modificar_proyecto():
                 # Cuando se selecciona esta opción, no se guarda y se sale del loop.
                 print("Saliendo sin guardar.")
                 break
-                
-                
+            
             input("Presiona enter para continuar...")
-
-    
 
 
 def borrar_proyecto():
@@ -332,3 +330,7 @@ def exportar_tabla(tabla):
         print(tabla, file=f)
     
     print(F"Exportando la tabla a {archivo_a_exportar}")
+
+# =======================================================================
+# FIN DE ADMINISTRADOR DE PROYECTOS
+# =======================================================================
