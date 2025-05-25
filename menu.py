@@ -1,7 +1,6 @@
 from json import *
 from funciones import *
 from pwinput import pwinput
-import tabulate
 
 
 
