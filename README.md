@@ -2,11 +2,11 @@
 Este proyecto es una aplicación de consola simple para demostrar los conocimientos adquiridos durante la unidad 3.
 Requiere una minima configuración
 
-## Funcionamiento del programa
+### Funcionamiento del programa
 
 Para usar el programa correctamente se debe usar un virtual environment, para realizar lo siguiente:
 <details open>
-<summary ><h2>Instrucciones windows</h2></summary>
+<summary ><h2>Instrucciones Windows</h2></summary>
 
 Se recomienda utilizar Powershell.
 
